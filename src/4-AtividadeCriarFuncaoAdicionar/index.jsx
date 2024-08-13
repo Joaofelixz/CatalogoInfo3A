@@ -52,3 +52,10 @@ export default function App(){
     </div>
    
   );
+  
+  const [listaPedidos, setPedidos] = useState([]); 
+
+    const adicionarProdutoPedidos = (produto) => {
+        setPedidos([...listaPedidos, produto]);
+    } 
+    console.table(listaPedidos);
