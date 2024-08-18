@@ -38,3 +38,76 @@
 // Passe o identificador (`id`) do item como parâmetro para `removerItemPedidos`, o mesmo que você usa no `map`.
 // No conteúdo do botão, coloque o texto "Remover".
 
+mport { useState } from "react";
+
+export default function Home(){
+    const [listadeProdutos, setlistadeProdutos] = useState([
+        {
+            id:1,
+
+            item:"tenis",
+
+            preco:"R$ 105,99"
+        },
+        {
+            id:2,
+
+            item:"tenis",
+
+            preco:"R$ 100,99"
+        },
+        {
+            id:3,
+
+            item:"tenis",
+
+            preco:"R$ 100,99"
+        },
+    ])
+}
+ const [listaPedidos, setlistaPedidos] = useState([]);
+   
+    const adicionarItemPedidos = (objeto) => {
+      setlistaPedidos([...listaPedidos, objeto])
+    }
+
+    const removerPedido = (id) => {
+        let remover = false;
+        let listaaux = listaPedidos.filter((produto)=>{
+            if (remover == false) {
+                if (produto.id !== id){
+                    return produto
+                }else{
+                    remover = true;
+                    return null
+                }
+            }else{
+                return produto
+            }
+        });
+        setlistaPedidos(listaaux);
+    } 
+
+return (
+    <div>
+        <h1>Loja de Calçados</h1>
+        {
+          listaProdutos.map((produto)=>
+            <div key={produto.id}>
+              <p>{produto.item}</p>
+              <p>{produto.preco}</p>
+              <button onClick={()=>adicionarItemPedidos(produto)}>Selecionar</button>
+            </div>
+        )
+        }
+        {
+            listaPedidos.map((produto)=>
+            <div key={produto.id}>
+                <p>{produto.item}</p>
+                <p>{produto.preco}</p>
+                <button onClick={()=>removerPedido(produto.id)}>Remover</button>
+            </div>
+            )
+        }
+    </div>
+);
