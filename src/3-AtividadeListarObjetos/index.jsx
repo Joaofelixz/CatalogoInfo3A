@@ -2,51 +2,43 @@
 // Utilize o método `map` para listar cada objeto da `listaProdutos`
 // dentro desse `<div>`.
 
-export default function Home() {
-  return (
-      <div>
-          <h1>LOJA DE CALÇADOS</h1>
-      </div>
-  );
-}
 import { useState } from "react";
 
-export default function App(){
-  const [listadeProdutos, setlistadeProdutos] = useState([
-      {
-          id:1,
+export default function Home(){
+    const [listadeProdutos, setlistadeProdutos] = useState([
+        {
+            id:1,
 
-          item:"tenis",
+            item:"tenis",
 
-          preco:"R$ 105,99"
-      },
-      {
-          id:2,
+            preco:"R$ 105,99"
+        },
+        {
+            id:2,
 
-          item:"tenis",
+            item:"tenis",
 
-          preco:"R$ 100,99"
-      },
-      {
-          id:3,
+            preco:"R$ 100,99"
+        },
+        {
+            id:3,
 
-          item:"tenis",
+            item:"tenis",
 
-          preco:"R$ 100,99"
-      },
-  ])
+            preco:"R$ 100,99"
+        },
+    ])
 }
-
-
-  return (
-    <div className="Produtos">
-    {listadeProdutos.map((produtos)=>
-    <div key={produtos.id}>
-      <p>{produtos.item}</p>
-      <p>{produtos.preco}</p>
+return (
+    <div>
+        <h1>Loja de Calçados</h1>
+        {
+          listaProdutos.map((produto)=>
+            <div key={produto.id}>
+              <p>{produto.item}</p>
+              <p>{produto.preco}</p>
+            </div>
+        )
+        }
     </div>
-  
-  )}
-    </div>
-   
-  );
+);
