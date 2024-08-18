@@ -4,58 +4,49 @@
 // Dentro da função, utilize `setListaPedidos` para adicionar o `objeto` à `listaPedidos`.
 // Exemplo: `setListaPedidos([...listaPedidos, objeto]);`
 
-export default function Home() {
-  return (
-      <div>
-          <h1>LOJA DE CALÇADOS</h1>
-      </div>
-  );
-}
 import { useState } from "react";
 
-export default function App(){
-  const [listadeProdutos, setlistadeProdutos] = useState([
-      {
-          id:1,
+export default function Home(){
+    const [listadeProdutos, setlistadeProdutos] = useState([
+        {
+            id:1,
 
-          item:"tenis",
+            item:"tenis",
 
-          preco:"R$ 105,99"
-      },
-      {
-          id:2,
+            preco:"R$ 105,99"
+        },
+        {
+            id:2,
 
-          item:"tenis",
+            item:"tenis",
 
-          preco:"R$ 100,99"
-      },
-      {
-          id:3,
+            preco:"R$ 100,99"
+        },
+        {
+            id:3,
 
-          item:"tenis",
+            item:"tenis",
 
-          preco:"R$ 100,99"
-      },
-  ])
+            preco:"R$ 100,99"
+        },
+    ])
 }
-
-
-  return (
-    <div className="Produtos">
-    {listadeProdutos.map((produtos)=>
-    <div key={produtos.id}>
-      <p>{produtos.item}</p>
-      <p>{produtos.preco}</p>
-    </div>
-  
-  )}
-    </div>
+ const [listaPedidos, setlistaPedidos] = useState([]);
    
-  );
-  
-  const [listaPedidos, setPedidos] = useState([]); 
+    const adicionarItemPedidos = (objeto) => {
+      setlistaPedidos([...listaPedidos, objeto])
+    }
 
-    const adicionarProdutoPedidos = (produto) => {
-        setPedidos([...listaPedidos, produto]);
-    } 
-    console.table(listaPedidos);
+return (
+    <div>
+        <h1>Loja de Calçados</h1>
+        {
+          listaProdutos.map((produto)=>
+            <div key={produto.id}>
+              <p>{produto.item}</p>
+              <p>{produto.preco}</p>
+            </div>
+        )
+        }
+    </div>
+);
