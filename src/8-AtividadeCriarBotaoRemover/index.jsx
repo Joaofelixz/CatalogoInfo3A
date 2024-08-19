@@ -38,7 +38,7 @@
 // Passe o identificador (`id`) do item como parâmetro para `removerItemPedidos`, o mesmo que você usa no `map`.
 // No conteúdo do botão, coloque o texto "Remover".
 
-mport { useState } from "react";
+import { useState } from "react";
 
 export default function Home(){
     const [listadeProdutos, setlistadeProdutos] = useState([
