@@ -28,3 +28,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </React.StrictMode>,
 )
+
+ReactDom.render(
+  <React.StrictMode>
+      <Header title="Bem-vindo ao meu site" />
+      <Footer desenvolvedor="João Gabriel"/>
+  </React.StrictMode>
+  )

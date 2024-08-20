@@ -39,6 +39,8 @@
 // No conteúdo do botão, coloque o texto "Remover".
 
 import { useState } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function Home(){
     const [listadeProdutos, setlistadeProdutos] = useState([
@@ -64,7 +66,7 @@ export default function Home(){
             preco:"R$ 100,99"
         },
     ])
-}
+
  const [listaPedidos, setlistaPedidos] = useState([]);
    
     const adicionarItemPedidos = (objeto) => {
@@ -111,3 +113,4 @@ return (
         }
     </div>
 );
+}

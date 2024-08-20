@@ -28,11 +28,11 @@ export default function Home(){
             preco:"R$ 100,99"
         },
     ])
-}
+
 return (
     <div>
         <h1>Loja de Calçados</h1>
     </div>
 );
-
+}
 

@@ -30,7 +30,7 @@ export default function Home(){
             preco:"R$ 100,99"
         },
     ])
-}
+
  const [listaPedidos, setlistaPedidos] = useState([]);
    
     const adicionarItemPedidos = (objeto) => {
@@ -50,3 +50,4 @@ return (
         }
     </div>
 );
+}
